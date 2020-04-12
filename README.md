@@ -24,7 +24,7 @@
 # Implementation
   1. Depth-First Search (DFS): Traverse graph and check hamiltonian paths. Since the problem is NP complete and specifies at least a 100 nodes, this is perfectly sufficient because at worst case you'll need to check every permutation anyways. TIncase a user does need to analyze more than 990
   2. Iterate Permutations: Instead of recursive calls which can lead to stackoverflow passed 990 nodes, store all levels and adjencies into a tree and then iteratively print all permutations of possible ham paths. This implmentation leverages the multiplication rule, since building a path is a step by step tree of potential node adjacencies. 
-  3. Use Grovers algorithm to quantum mechanically search for hamiltonian paths in the graph. Theoretically, this solutions promises to prove a quadratic speed up to  *NOTE* Due to quantum noise th 
+  3. Use Grovers algorithm to quantum mechanically search for hamiltonian paths in the graph. Theoretically, this solution promises to provide a quadratic speed up to that of a classical computing algorithm.  *NOTE* Due to quantum noise the optimization may be reduced.  
 
 
 
@@ -33,3 +33,9 @@
 - Networkx: Objects and Methods for construction, initalizing, and accessing a random graph.
 - MatPlotLib: Methods to display a visual representation of the graph.
 - Pyquil: A well supported, open-source framework for quantum computing that allows you to leverage a QVM (quantum virtual machine) in order to run quantum code on a classical computer. It's recommended to pip install this moduke into a virtual environment.
+
+
+
+# Sources
+- https://awesomeopensource.com/project/rigetti/pyquil
+- http://docs.rigetti.com/en/stable/start.html
