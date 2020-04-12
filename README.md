@@ -1,13 +1,13 @@
 # Find Hamiltonian Paths
 
 
-# Problem
+# Problem:
  Represent a random graph with n vertices of at least degree one (n is at least 100). 
  This graph might be undirected or directed. It could have cycles or no cycles. 
  Randomly select two vertices (x,y) from the graph, and find all of the possible hamiltonian paths in the graph.
  
 
-# Solution
+# Solutions:
 1. Recursive Depth First Search
 2. Iterate Permutations
 3. Groves Quantum Search
