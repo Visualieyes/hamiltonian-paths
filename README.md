@@ -1,4 +1,4 @@
-# Hamiltonian-search
+# Find Hamiltonian Paths
 
 
 # Problem
