@@ -22,9 +22,9 @@
 - *Important* Depending on the goal of the search, a quantum approach might not necessarily always be optimal, especially considering the learning curve for unversed and inexperienced developers. If we want to find all possible paths, then they will all need to be stored. The worst-case space complexity would still be (N-1)! *since we start from a given vertex*. A quantum search might provide a quick speed up to search and find a particular path, or any hamiltonian path. Moreoeover, if quantum circuits can optimize storage or memory access then the potential improvement of quantum algorithms would surely supersede that of classical computing algorithms. This research 'path' is certainly something I'm interested in pursuing. 
 
 # Implementation
-  1. Depth-First Search (DFS): Traverse graph and check hamiltonian paths. Since the problem is NP complete and specifies at least a 100 nodes, this is perfectly sufficient because at worst case you'll need to check every permutation anyways. TIncase a user does need to analyze more than 990
-  2. Iterate Permutations: Instead of recursive calls which can lead to stackoverflow passed 990 nodes, store all levels and adjencies into a tree and then iteratively print all permutations of possible ham paths. This implmentation leverages the multiplication rule, since building a path is a step by step tree of potential node adjacencies. 
-  3. Use Grovers algorithm to quantum mechanically search for hamiltonian paths in the graph. Theoretically, this solution promises to provide a quadratic speed up to that of a classical computing algorithm.  *NOTE* Due to quantum noise the optimization may be reduced.  
+  1. Depth-First Search (DFS): Traverse graph and check hamiltonian paths. Since the problem is NP complete and specifies at least a 100 nodes, this is perfectly sufficient because at worst case you'll need to check every permutation anyways. Worst case is O((n-1)!), since starting from a given vertex. Moreover, given two vertices, it needs to run once for each vertex, so worst case is actually, twice that/
+  2. Iterative: *no code implemented* Instead of recursive calls which can lead to stackoverflow passed 990 nodes, store all levels and adjencies into a tree and then iteratively print all permutations of possible ham paths. The worst case for this is (n* n!)
+  3. Grove's Search: *pseudo code only* Use Grovers algorithm to quantum mechanically search and find all hamiltonian paths in a graph. Idea: Store vertices and connections as a matrix table. Cells are 1 or 0 depending on whether there is an edge connecting the vertices. This matrix structure of 0/1 states makes it convenient for linear algebra and quantum computing. Groves search algorithm allows us to be in a superposition of states and return the index of the states that are marked in square root of N time. We can leverage this functionality in two ways. 1. Analyze matrix for all possible paths, return true for those that are hamiltonian marked. 2. Return true if path is a hamiltonian path. Theoretically, this solution promises to provide a quadratic speed up to that of a classical computing algorithm.  *NOTE* Due to quantum noise the optimization may be reduced. 
 
 
 
@@ -39,3 +39,4 @@
 # Sources
 - https://awesomeopensource.com/project/rigetti/pyquil
 - http://docs.rigetti.com/en/stable/start.html
+- https://quantum-computing.ibm.com/docs/guide/q-algos/grover-s-algorithm
