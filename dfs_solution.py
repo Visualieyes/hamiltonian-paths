@@ -43,12 +43,9 @@ def dfs_hamiltonian_paths(graph_g, vertex_point, visited={}, path=[]):
 					visited[node] = False
 					path.pop()
 
-#iterative approach
-def iterate_hamiltonian_paths(graph_g, vertex_point):					
-
 
 #returns none. Checks and prints all possible hamiltonian paths in a random graph G
-def find_hamiltonian_paths(graph_g, vertex_point):
+def find_all_hamiltonian_paths(graph_g, vertex_point):
 	#Check graph contains nodes
 	if(graph_g):
 		#error handle potential stackoverflow
@@ -75,8 +72,8 @@ def main():
 	y = nx.nodes(G)[random.randint(0, len(nx.nodes(G)))]
 
 	#find all hamiltonian paths for x, y
-	find_hamiltonian_paths(G, x)
-	find_hamiltonian_paths(G, y)
+	find_all_hamiltonian_paths(G, x)
+	find_all_hamiltonian_paths(G, y)
 
 	#draw and plot graph
 	nx.draw(G)
@@ -89,8 +86,6 @@ def main():
 
 if __name__ == '__main__':
 	main()
-
-
 
 
 
