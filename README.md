@@ -37,7 +37,7 @@
 - Python Programming Lanugage (3.7): Python is widely used, well supported, and extremely readable. When solving with complex problems that involve multiple chunks of information, a highly-readable programming language will increase the cognitive resources available to focus solving the problem rather than on syntax and code. 
 - Networkx: Objects and Methods for constructing, initalizing, and accessing a random graph.
 - MatPlotLib: Methods to display a visual representation of the graph.
-- Pyquil: A well supported, open-source framework for quantum computing that allows you to leverage a QVM (quantum virtual machine) in order to run quantum code on a classical computer. It's recommended to pip install this moduke into a virtual environment.
+- Pyquil: A well supported, open-source framework for quantum computing that allows you to leverage a QVM (quantum virtual machine) in order to run quantum code on a classical computer. It's recommended to pip install this module into a virtual environment.
 
 
 
