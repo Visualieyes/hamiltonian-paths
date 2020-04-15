@@ -2,7 +2,7 @@
 
 
 # Problem:
- Represent a random graph with n vertices of at least degree one (n is at least 100). 
+ Represent a random graph of n vertices of at least degree one (n is at least 100). 
  This graph might be undirected or directed. It could have cycles or no cycles. 
  Randomly select two vertices (x,y) from the graph, and find all of the possible hamiltonian paths in the graph.
  
@@ -19,6 +19,7 @@
   Recursive algs will only scale to so many nodes until an iterable solution must be used. Worst-case, every node is redudantly interconnected and N! paths will be stored. * Example: Consider a graph of the human population where N is 7 billion. Say we want to simulate the ways a virus could traverse through each person in the population individually (not expontially). The number of different 'paths' would be 7billion! which is a very large number. Too large for a classical computer. As a result a quicker method is needed in order to solve the path finding problem. *
 - Quantum search algorithms could speed up the time of the search. 
 - *Important* Depending on the goal of the search, a quantum approach might not necessarily always be optimal, especially considering the learning curve for unversed and inexperienced developers. If we want to find all possible paths, then they will all need to be stored. The worst-case space complexity would still be (N-1)! *since we start from a given vertex*. A quantum search might provide a quick speed up to search and find a particular path, or any hamiltonian path. Moreoeover, if quantum circuits can optimize storage or memory access then the potential improvement of quantum algorithms would surely supersede that of classical computing algorithms. This research 'path' is certainly something I'm interested in pursuing. 
+- Networkx doesn't contain any function for generating random graphs that provides parameters for degree and directed/undirected. The best is a probality for edge connection. Specified at 1 to ensure degree of at least 1, the graph often leads to a hyper redundant graph, which is essentially just generating worst case graphs for my algorithm. 
 
 # Solutions + Implementation
   1. Depth-First Search (DFS): From a given vertex, traverse the graph for all it's adjacencies. As you traverse, store path and visited nodes. If the given path is hamiltonian, output it. Since the problem is NP complete and specifies at least a 100 nodes, this is perfectly sufficient because at worst case you'll need to check every permutation anyways. Worst-Case: O(n!) but really like 2 * O((n-1)!) because we dont check every vertex, we start with one, n-1) and check the rest. Then we do this for another given vertex. Recursive implementation is clean and elegant but leads to stackoverflow passed 990 nodes. Hardware: Mac OS 2.4 ghz processor, 8GB ram.
