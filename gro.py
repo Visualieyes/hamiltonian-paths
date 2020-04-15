@@ -1,25 +1,49 @@
+import pyquil
+import networkx as nx
+import random
+import matplotlib.pyplot as plt
+from collections import defaultdict
 import numpy as np
-from grove.amplification.grover import Grover
-from pyquil import get_qc
- 
-# Bitstring Map as an algorithm input
-SEARCHED_STRING = "1011010"
-N = len(SEARCHED_STRING)
-mapping = {}
-for b in range(2 ** N):
-    pad_str = np.binary_repr(b, N)
-    if pad_str == SEARCHED_STRING:
-        mapping[pad_str] = -1
-    else:
-        mapping[pad_str] = 1
- 
-# Connection
-qc = get_qc('9q-qvm')
- 
-#==============================================================================
-# Grove: Grove's Search Algorithm
-#==============================================================================
-# Run
-algo = Grover()
-ret_string = algo.find_bitstring(qc, bitstring_map=mapping)    
-print("The searched string is: {}".format(ret_string))
+
+
+#data:graph, nodes, adjacencies, path
+
+#quantum components: qubits, states, superposition, oracle, projector, groves search, measurement, wave function, collapse, interference, amplitude 
+
+
+
+#Helper Function
+#Returns Random Boolean Value
+def randBool():
+ bool_val = False
+	val = random.randint(0,1)
+	if val == 1:
+	 bool_val = True
+ return bool_val
+
+#return random graph of 'N' vertices with at least degree 1, as a matrix in numpy
+def generateRandomGraph(N):
+	G = nx.gnp_random_graph(random.randint(N, N+10), 1, seed=None, directed=randBool())
+	matrix = nx.numpy_to_matrix(G)
+
+
+
+#generate qubits for all possible states
+def qubies(graph_g):
+	
+
+
+
+#grove search
+def quSearch():
+	return None
+
+
+
+def main():
+
+	#connect to QVM
+
+	#...function calls
+
+	#measure and project the state of the qubit
