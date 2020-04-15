@@ -21,7 +21,7 @@ def randBool():
 	 bool_val = True
  return bool_val
 
-#return random graph of 'N' vertices with at least degree 1, as a matrix in numpy
+#return random graph of 'N' vertices with at least degree 1, as a matrix in numpy.
 def generateRandomGraph(N):
 	G = nx.gnp_random_graph(random.randint(N, N+10), 1, seed=None, directed=randBool())
 	matrix = nx.numpy_to_matrix(G)
@@ -34,16 +34,21 @@ def qubies(graph_g):
 
 
 
-#grove search
-def quSearch():
+#Groves search or linear algebra on matrix
+def quSolve():
 	return None
 
 
 
 def main():
+	
 
 	#connect to QVM
-
+	
+	#construct and inilialize graph
+	
 	#...function calls
 
 	#measure and project the state of the qubit
+	
+	#display graph
