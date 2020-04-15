@@ -1,6 +1,5 @@
-re
 
-networkx==
-matplotlib
-random 
+networkx==2.4
+matplotlib==3.0.3
+pyquil==2.19.0
 
