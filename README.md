@@ -7,7 +7,7 @@
  Randomly select two vertices (x,y) from the graph, and find all of the possible hamiltonian paths in the graph.
  
 
-# Solutions:
+# Approach:
 1. Classical Brute-Force
 3. Quantum Search
 
@@ -20,10 +20,10 @@
 - Quantum search algorithms could speed up the time of the search. 
 - *Important* Depending on the goal of the search, a quantum approach might not necessarily always be optimal, especially considering the learning curve for unversed and inexperienced developers. If we want to find all possible paths, then they will all need to be stored. The worst-case space complexity would still be (N-1)! *since we start from a given vertex*. A quantum search might provide a quick speed up to search and find a particular path, or any hamiltonian path. Moreoeover, if quantum circuits can optimize storage or memory access then the potential improvement of quantum algorithms would surely supersede that of classical computing algorithms. This research 'path' is certainly something I'm interested in pursuing. 
 
-# Implementation
-  1. Depth-First Search (DFS): Traverse graph and check hamiltonian paths. Since the problem is NP complete and specifies at least a 100 nodes, this is perfectly sufficient because at worst case you'll need to check every permutation anyways. TIncase a user does need to analyze more than 990
-  2. Iterate Permutations: Instead of recursive calls which can lead to stackoverflow passed 990 nodes, store all levels and adjencies into a tree and then iteratively print all permutations of possible ham paths. This implmentation leverages the multiplication rule, since building a path is a step by step tree of potential node adjacencies. 
-  3. Use Grovers quantum serach algorithm to quadratically speedup the search for hamiltonian paths in the graph. Theoretically, this solution promises to provide a quadratic speed up to that of a classical computing algorithm but due to *quantum noise* the optimization may be reduced.  
+# Solutions + Implementation
+  1. Depth-First Search (DFS): From a given vertex, for all adjacencies in that vertex traverse the graph from that vertex. As you traverse store path and visited nodes. If the given path is hamiltonian, print. Since the problem is NP complete and specifies at least a 100 nodes, this is perfectly sufficient because at worst case you'll need to check every permutation anyways. Worst-Case: O(n!) but really like 2 * O((n-1)!) because we dont check every vertex, we start with one, n-1) and check the rest. Then we do this for another given vertex. Recursive implementation is clean and elegant but leads to stackoverflow passed 990 nodes. Hardware: Mac OS 2.4 ghz processor, 8GB ram.
+ 
+  2. Quantum Algorithms: *pseudo code* 1st approach: Grovers. Idea: grovers algorthms works well to return marked items in a list. Transform graph into a table of nodes where Use numpy since its familiar to pyquil. Initialize the graph as a matrix table to quadratically or exponentially speedup the search for hamiltonian paths in the graph. Theoretically, this solution promises to provide a quadratic speed up to that of a classical computing algorithm but due to *quantum noise* the optimization may be reduced.  
 
 
 
